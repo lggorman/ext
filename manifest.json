@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+
+  "name": "Name here",
+  "description": "blah blah",
+  "version": "1.0",
+
+  "permissions": [
+    "tabs",
+    "http://*/*"
+  ],
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+
+ "content_scripts": [{
+    "matches": ["http://*/*"],
+    "css": ["style.css"],
+    "js": ["jquery.js", "custom.js"]
+  }],
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  }
+}
