@@ -7,7 +7,8 @@
 
   "permissions": [
     "tabs",
-    "http://*/*"
+    "http://*/*",
+    "https://api.quizlet.com/*"
   ],
 
   "browser_action": {
