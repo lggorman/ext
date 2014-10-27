@@ -48,7 +48,7 @@
 	transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
 	width:70%;
 	margin:0 auto;
-	padding-top:30px;
+	
 }
 
 #plugin-modal button {
@@ -69,9 +69,13 @@
 	padding-bottom: 0.94444rem;
 	padding-left: 1.77778rem;
 	font-size: 0.88889rem;
-	background-color: #008cba;
+	background-color: #32CC99;
 	border-color: #007095;
 	color: white;
 	transition: background-color 300ms ease-out;
 
+}
+
+#plugin-modal button:hover{
+	background-color:#138F6A;
 }

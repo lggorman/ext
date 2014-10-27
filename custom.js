@@ -22,15 +22,28 @@ $(function(){
         console.log(theDef);
 
         $('body').append("<div id = 'overlay'></div><div id = 'plugin-modal'>" + theDef + "</br></br><strong>"+ theWord +"</strong></div>");
-        $('#plugin-modal').append("</br></br><input type = 'text'></input></br></br><button>Got it</button>");
+        $('#plugin-modal').append("</br></br><input type = 'text' id = 'studyAnswerExt'></input></br></br><button>Got it</button>");
 
         $('#plugin-modal button').click(function(){
-			$('#plugin-modal').hide();
-			$('#overlay').hide();
+             var theAnswer = $('#studyAnswerExt').val();
+             console.log(theAnswer);
+             if( theAnswer == theWord | theAnswer == theWord.toLowerCase() ){
+			     $('#plugin-modal').hide();
+			     $('#overlay').hide();
+            }
 		});
 	
 		
     });
+
+    window.addEventListener("load", function() {
+        chrome.extension.sendMessage({
+            type: "dom-loaded", 
+            data: {
+                myProperty: "value"
+            }
+        });
+    }, true);
 
     
 
