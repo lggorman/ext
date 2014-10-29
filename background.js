@@ -1,6 +1,31 @@
-tabId = 3;
 
-console.log("working now?");
+function getPageandSelectedTextIndex(tab) {
+  console.log('called the function');
+  chrome.tabs.getSelected(null, function(tab) {
+    chrome.tabs.sendMessage(tab.id, {greeting: "hello " + tab.id}, function(response) {
+        console.log(response.farewell);
+    });
+  });
+}
+
+chrome.tabs.onCreated.addListener(function(tab) {
+        console.log('new tab');
+        getPageandSelectedTextIndex(tab);
+});
+
+
+
+
+
+
+
+/*
+chrome.tabs.executeScript(tabId, { file: "content.js" }, function() {
+  var port = chrome.tabs.connect(tabId, { name: "port-conn" });
+  port.postMessage({ data: "This is a test" });
+});
+
+
 
 chrome.tabs.onSelectionChanged.addListener(function(tabId) {
    chrome.tabs.sendRequest(tabId, "resize");
