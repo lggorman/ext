@@ -2,12 +2,43 @@ $(function(){
 	console.log("This is the custom js");
 
 
+    
+    //NOT WORKING, probably because of asynch? need to use callback
+    function get_selected_option(){
+        chrome.storage.sync.get(function(selected) {
+            console.log(selected);
+            if(selected.custom_id == false){
+                return selected.test;
+            }
+            else{
+                return selected.custom_id;
+            }
+        });
+    }
+
+    var yourTest = get_selected_option();
+
+    console.log(yourTest);
+
+    if(yourTest == 'GRE'){
+        testId = 54108232;
+    }
+    else if (yourTest == 'SAT'){
+        testId = 53598208;
+    }
+    else{
+        testId = yourTest;
+    }
+    
+        
+
+
 	newWord();
 
 	function newWord(){ 
         return $.ajax({
             dataType: "json",
-            url: "https://api.quizlet.com/2.0/sets/54108232?client_id=CgWatQQYh9",    
+            url: "https://api.quizlet.com/2.0/sets/" + testId + "?client_id=CgWatQQYh9",    
         });
     }
 
@@ -36,40 +67,5 @@ $(function(){
 		
     });
 
-chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-    console.log('called!');
-    console.log(request);
-    console.log(sender.tab ?
-                "from a content script:" + sender.tab.url :
-                "from the extension");
-    
-      sendResponse({farewell: "goodbye"});
-   
-  });
 
-/*
-    chrome.extension.onConnect.addListener(function(port) { 
-        port.onMessage.addListener(function(msg) { 
-            console.log("RECEIVED A MESSAGE: " + msg.data); 
-        }); 
-    }); 
-
-   /*
-    window.addEventListener("load", function() {
-        chrome.extension.sendMessage({
-            type: "dom-loaded", 
-            data: {
-                myProperty: "value"
-            }
-        });
-    }, true);
-    */
-
-    
-
-
-	
-
-	
-
-});
+}); 

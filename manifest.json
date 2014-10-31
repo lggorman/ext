@@ -2,28 +2,30 @@
 {
   "manifest_version": 2,
 
-  "name": "Name here",
-  "description": "blah blah",
+  "name": "Squirrel",
+  "description": "A study aid for the easily distractable",
   "version": "1.0",
 
   "permissions": [
     "tabs",
     "http://*/*",
-    "https://api.quizlet.com/*"
+    "https://api.quizlet.com/*",
+    "storage"
   ],
 
   "browser_action": {
     "default_icon": "icon.png"
   },
 
+  "options_page": "options.html",
+
  "content_scripts": [{
     "matches": ["http://*/*"],
-    "css": ["style.css"],
-    "js": ["jquery.js", "custom.js"]
+    "css": ["style.css"]
   }],
 
   "background": {
     "scripts": ["background.js"],
     "persistent": false
   }
-}
+} 
