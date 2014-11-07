@@ -2,7 +2,7 @@
 {
   "manifest_version": 2,
 
-  "name": "Squirrel",
+  "name": "Study Squirrel",
   "description": "A study aid for the easily distractable",
   "version": "1.0",
 
@@ -11,6 +11,7 @@
     "http://*/*",
     "https://api.quizlet.com/*",
     "storage"
+
   ],
 
   "browser_action": {
@@ -27,5 +28,6 @@
   "background": {
     "scripts": ["background.js"],
     "persistent": false
-  }
+  } 
+
 } 

@@ -1,0 +1,69 @@
+body {
+    font-size:18px;
+}
+
+.container {
+    margin:0 auto;
+    width:40%;
+    margin:0 auto;
+}
+
+h1 {
+    font-weight:normal;
+    font-size:30px;
+    margin-top:50px;
+}
+
+p {
+    font-size:14px;
+}
+
+input[name = "custom_id"]{
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #cccccc;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.75);
+    margin: 0 0 0.88889rem 0;
+    padding: 0.44444rem;
+    height: 2.05556rem;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
+    margin: 25px 0;
+}
+
+form{ margin-top:40px;}
+
+button {
+    border-style: solid;
+    border-width: 0px;
+    cursor: pointer;
+    font-weight: normal;
+    line-height: normal;
+    margin: 0 0 1.11111rem;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    display: inline-block;
+    padding-top: 0.88889rem;
+    padding-right: 1.77778rem;
+    padding-bottom: 0.94444rem;
+    padding-left: 1.77778rem;
+    background-color: #32CC99;
+    border-color: #007095;
+    color: white;
+    transition: background-color 300ms ease-out;
+    margin-top:20px;
+    font-size:16px;
+}
+
+button:hover {
+    background-color:#138F6A;
+}
