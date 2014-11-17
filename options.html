@@ -13,17 +13,24 @@
     <div class="container">
       <h1>Study Squirrel Options</h1>
       <form>
+        
+        <p>Select a vocab set:</p></br>
         <input type="radio" name="test" value="GRE" id = "gre_id">&nbsp;GRE Vocab&nbsp;&nbsp;&nbsp;
         <input type="radio" name="test" value="SAT" id = "sat_id">&nbsp;SAT Vocab</br></br>
         <p>In order to use a custom set, search <a href = "http://quizlet.com/">quizlet.com</a> for the set you would like to study, and get the set id number from the URL.</p><p>For example, if you wanted to learn the Japanese words for animals, you might navigate to the set 'Japanese Animals (romanji)' at the URL <a href="http://quizlet.com/30159939/japanese-animals-romaji-flash-cards/">http://quizlet.com/30159939/japanese-animals-romaji-flash-cards/</a>.  What you need from that URL is the number between quizlet.com and the name of the set. In the case of 'Japanese Animals,' the set id would be 30159939.  Happy studying!</p>
         <label>Custom ID: </label><input type="text" name="custom_id">
+
+        <p>How often would you like to load vocab cards?</p></br>
+
+        <input type="radio" name="load" value="onTab" id = "tab_id">&nbsp;On new tab&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="load" value="onPageLoad" id = "load_id">&nbsp;On page load</br></br>
 
         <div id="status"></div>
         <button id="save">Save Changes</button>
       </form>
     </div>
     <script src = "jquery.js"></script>
-    <script src="popup.js"></script>
+    <script src="options.js"></script>
   </body>
 
 
