@@ -14,7 +14,8 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 		      'load' : 'onTab'
 		    }, function(items) {
 		        console.log(items.load); 
-		        sendResponse({data: 'lets try this'}); 
+		        sendResponse({data: items.load}); 
+
 		   });
 
 		  //sendResponse({data: 'will this work?'});
@@ -22,6 +23,8 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     else{
       sendResponse({data: 'nope'}); 
     }
+
+    return true;
 });
 
 
