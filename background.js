@@ -1,4 +1,6 @@
 
+var popupOn = false;
+
 chrome.tabs.onCreated.addListener(function(tab) {
         console.log('new tab');
         chrome.tabs.executeScript(tab.id, {file: 'jquery.js'});
@@ -8,12 +10,14 @@ chrome.tabs.onCreated.addListener(function(tab) {
 
 });
 
-if(popupOn == false){
+
         
 		
-	chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-		
-	    if (request.method == "getStorage"){
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+	console.log(popupOn);
+	if(popupOn == false){
+
+		if (request.method == "getStorage"){
 			  chrome.storage.sync.get({
 			      'load' : 'onTab'
 			    }, function(items) {
@@ -23,19 +27,28 @@ if(popupOn == false){
 			        if(items.load == 'onPageLoad'){
 				        chrome.tabs.executeScript(sender.tab.id, {file: 'jquery.js'});
 		        		chrome.tabs.executeScript(sender.tab.id, {file: 'custom.js'});
+
+
 		        	}
 
 			   });
 
 			 
-	    }
-	    else{
-	      sendResponse({data: 'nope'}); 
-	    }
+		}
+		else{
+		  sendResponse({data: 'nope'}); 
+		}
 
-	    return true;
-	});
-}
+		return true;
+	}
+	console.log('page loaded');
+	popupOn = false;
+
+	
+});
+
+
+
 
 
 
