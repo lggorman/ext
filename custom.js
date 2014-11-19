@@ -1,22 +1,20 @@
 $(function(){ 
+
+    
     
     chrome.storage.sync.get(function(selected) {
         if(selected.custom_id == ''){
-            console.log(selected);
 
             if(selected.test == 'GRE'){
                 testId = 54108232;
-                console.log('GRE!');
             }
             else{
                 testId = 53598208;
-                console.log('SAT!');
             }
 
         }  
         else{
             testId = selected.custom_id;
-            console.log(testId);
         }
 
 
@@ -32,14 +30,12 @@ $(function(){
         var initModal = newWord();
 
         initModal.success(function (data){
-            console.log(data);
             randInt = Math.floor(Math.random() * data.terms.length);
             selected = data.terms[randInt];
             theDef = selected.definition;
             theWord = selected.term;
-            console.log(theDef);
 
-            $('body').append("<div id = 'overlay'></div><div id = 'plugin-modal'>" + theDef + "</br></br><strong>"+ theWord +"</strong></div>");
+            $('body').append("<div id = 'overlay'></div><div id = 'plugin-modal'>" + theDef + "</br></br><strong>"+ theWord +"</strong><div id='closeout-modal'>x</div></div>");
             $('#plugin-modal').append("</br></br><input type = 'text' id = 'studyAnswerExt'></input></br></br><button>Got it</button>");
 
             $('#plugin-modal button').click(function(){
@@ -48,6 +44,11 @@ $(function(){
                      $('#plugin-modal').hide();
                      $('#overlay').hide();
                 }
+            });
+
+            $('#closeout-modal').click(function(){
+                $('#plugin-modal').hide();
+                $('#overlay').hide();
             });
         
             
