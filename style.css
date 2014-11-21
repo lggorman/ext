@@ -75,6 +75,7 @@
 	color: white;
 	transition: background-color 300ms ease-out;
 	font-size:18px;
+	width:auto;
 }
 
 #plugin-modal button:hover{
