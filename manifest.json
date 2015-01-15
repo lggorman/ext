@@ -4,11 +4,12 @@
 
   "name": "Study Squirrel",
   "description": "A study aid for the easily distractable",
-  "version": "1.0",
+  "version": "1.3",
 
   "permissions": [
     "tabs",
     "http://*/*",
+    "https://*/*",
     "https://api.quizlet.com/*",
     "storage"
 

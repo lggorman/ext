@@ -10,6 +10,7 @@
 }
 
 #plugin-modal{
+	color:#000;
 	position:fixed;
 	top:27vh;
 	margin:0px auto;
@@ -23,7 +24,7 @@
 	top:27%;
 	font-family:arial, sans-serif;
 	font-size:18px;
-	text-align:center;
+	text-align:center !important;
 
 }
 

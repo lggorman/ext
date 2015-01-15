@@ -3,18 +3,17 @@ $(function(){
     
     
     chrome.storage.sync.get(function(selected) {
-        if(selected.custom_id == ''){
+        if(selected.custom_id != ''){
+            testId = selected.custom_id;     
 
+        }  
+        else{
             if(selected.test == 'GRE'){
                 testId = 54108232;
             }
             else{
                 testId = 53598208;
             }
-
-        }  
-        else{
-            testId = selected.custom_id;
         }
 
 

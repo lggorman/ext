@@ -39,6 +39,7 @@ function save_options() {
 
   function restore_options() {
     document.querySelector('input[name="test"]').addEventListener("click", removeCustom);
+    document.querySelector('#sat_id').addEventListener("click", removeCustom);
     document.querySelector('input[name="custom_id"]').addEventListener("click", removeStandard);
     chrome.storage.sync.get({
       'test' : 'GRE',
